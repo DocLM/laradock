@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=10">
 <title>Documentation - Laradock</title>
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=description content="Full PHP development environment for Docker.">
 <link rel=canonical href=https://laradock.io/documentation.html>
 <meta name=author content="Mahmoud Zalt">
@@ -213,7 +213,7 @@ After this you have to rebuild the container with the <code>--no-cache</code> op
 <p>1 - Open the <code>.env</code>.</p>
 <p>2 - Search for <code>PHP_VERSION</code>.</p>
 <p>3 - Set the desired version number:</p>
-<pre><code class=language-dotenv data-lang=dotenv>PHP_VERSION=5.6
+<pre tabindex=0><code class=language-dotenv data-lang=dotenv>PHP_VERSION=5.6
 </code></pre><p>4 - Finally rebuild the image</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker-compose build php-fpm
 </code></pre></div><blockquote>
@@ -226,7 +226,7 @@ After this you have to rebuild the container with the <code>--no-cache</code> op
 <p>1 - Open the <code>.env</code>.</p>
 <p>2 - Search for <code>PHP_VERSION</code>.</p>
 <p>3 - Set the desired version number:</p>
-<pre><code class=language-dotenv data-lang=dotenv>PHP_VERSION=7.2
+<pre tabindex=0><code class=language-dotenv data-lang=dotenv>PHP_VERSION=7.2
 </code></pre><p>4 - Finally rebuild the image</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker-compose build workspace
 </code></pre></div><p>Change the PHP-CLI Version</p>
@@ -238,7 +238,7 @@ d) search for the <code>PHP_FPM_INSTALL_XDEBUG</code> argument under the PHP-FPM
 e) set it to <code>true</code></p>
 <p>2 - Re-build the containers <code>docker-compose build workspace php-fpm</code></p>
 <p>For information on how to configure xDebug with your IDE and work it out, check this <a href=https://github.com/LarryEitel/laravel-laradock-phpstorm>Repository</a> or follow up on the next section if you use linux and PhpStorm.</p>
-<pre><code>###########################################################
+<pre tabindex=0><code>###########################################################
 ################ Containers Customization #################
 ###########################################################
 
@@ -272,8 +272,8 @@ of the <a href=https://github.com/krakjoe/pcov>README</a></p>
 <p>2 - Search for <code>WORKSPACE_INSTALL_PHPDBG</code>.</p>
 <p>3 - Set value to <code>true</code></p>
 <p>4 - Do the same for <code>PHP_FPM_INSTALL_PHPDBG</code></p>
-<pre><code class=language-dotenv data-lang=dotenv>WORKSPACE_INSTALL_PHPDBG=true
-</code></pre><pre><code class=language-dotenv data-lang=dotenv>PHP_FPM_INSTALL_PHPDBG=true
+<pre tabindex=0><code class=language-dotenv data-lang=dotenv>WORKSPACE_INSTALL_PHPDBG=true
+</code></pre><pre tabindex=0><code class=language-dotenv data-lang=dotenv>PHP_FPM_INSTALL_PHPDBG=true
 </code></pre>
 <p>1 - First install <code>ionCube Loader</code> in the Workspace and the PHP-FPM Containers:
 a) open the <code>.env</code> file
@@ -304,15 +304,15 @@ e) set it to <code>true</code></p>
 5 - Open your browser: http://localhost:9000/</p>
 <p>Troubleshooting:</p>
 <p>if you encounter a database error:</p>
-<pre><code>docker-compose exec --user=root postgres
+<pre tabindex=0><code>docker-compose exec --user=root postgres
 source docker-entrypoint-initdb.d/init_sonarqube_db.sh
 </code></pre><p>If you encounter logs error:</p>
-<pre><code>docker-compose run --user=root --rm sonarqube chown sonarqube:sonarqube /opt/sonarqube/logs
+<pre tabindex=0><code>docker-compose run --user=root --rm sonarqube chown sonarqube:sonarqube /opt/sonarqube/logs
 </code></pre><p><a href=https://docs.sonarqube.org/latest/><strong>SonarQube Documentation Here</strong></a></p>
 <p>It&rsquo;s recommended for production to create a custom <code>docker-compose.yml</code> file, for example, <code>production-docker-compose.yml</code></p>
 <p>In your new production <code>docker-compose.yml</code> file, you should include only the containers you are planning to run in production (usage example: <code>docker-compose -f production-docker-compose.yml up -d nginx mysql redis ...</code>).</p>
 <p>Note: The Database (MySQL/MariaDB/&mldr;) ports should not be forwarded on production, because Docker will automatically publish the port on the host unless specifically told not to. Forwarding these ports on production is quite insecure - so make sure to remove these lines:</p>
-<pre><code>ports:
+<pre tabindex=0><code>ports:
     - &quot;3306:3306&quot;
 </code></pre><p>To learn more about how Docker publishes ports, please read <a href=https://fralef.me/docker-and-iptables.html>this excellent post on the subject</a>.</p>
 <p></p>
@@ -328,7 +328,7 @@ source docker-entrypoint-initdb.d/init_sonarqube_db.sh
 <p>3 - Edit <code>.env</code> to Map the new application path:</p>
 <p>By default, Laradock assumes the Laravel application is living in the parent directory of the laradock folder.</p>
 <p>Since the new Laravel application is in the <code>my-cool-app</code> folder, we need to replace <code>../:/var/www</code> with <code>../my-cool-app/:/var/www</code>, as follow:</p>
-<pre><code class=language-dotenv data-lang=dotenv>  APP_CODE_PATH_HOST=../my-cool-app/
+<pre tabindex=0><code class=language-dotenv data-lang=dotenv>  APP_CODE_PATH_HOST=../my-cool-app/
 </code></pre><p>4 - Go to that folder and start working.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd my-cool-app
 </code></pre></div><p>5 - Go back to the Laradock installation steps to see how to edit the <code>.env</code> file.</p>
@@ -344,9 +344,9 @@ source docker-entrypoint-initdb.d/init_sonarqube_db.sh
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>php artisan
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>composer update
 </code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>phpunit
-</code></pre></div><pre><code>vue serve
+</code></pre></div><pre tabindex=0><code>vue serve
 </code></pre><p>(browse the results at <code>http://localhost:[WORKSPACE_VUE_CLI_SERVE_HOST_PORT]</code>)</p>
-<pre><code>vue ui
+<pre tabindex=0><code>vue ui
 </code></pre><p>(browse the results at <code>http://localhost:[WORKSPACE_VUE_CLI_UI_HOST_PORT]</code>)</p>
 <p>1 - Create a suitable configuration file (for example named <code>laravel-worker.conf</code>) for Laravel Queue Worker in <code>php-worker/supervisord.d/</code> by simply copying from <code>laravel-worker.conf.example</code></p>
 <p>2 - Start everything up</p>
@@ -379,7 +379,7 @@ This way is suggested when you don&rsquo;t want to start workspace in production
 <ol>
 <li>Add the following settings to your <code>webpack.mix.js</code> file. Please refer to Browsersync <a href=https://browsersync.io/docs/options>Options</a> page for more options.</li>
 </ol>
-<pre><code>const mix = require('laravel-mix')
+<pre tabindex=0><code>const mix = require('laravel-mix')
 
 (...)
 
@@ -409,7 +409,7 @@ mix.browserSync({
 <p>Modify following environment variable in <code>.env</code> file</p>
 </li>
 </ol>
-<pre><code>MAILU_RECAPTCHA_PUBLIC_KEY=&lt;YOUR_RECAPTCHA_PUBLIC_KEY&gt;
+<pre tabindex=0><code>MAILU_RECAPTCHA_PUBLIC_KEY=&lt;YOUR_RECAPTCHA_PUBLIC_KEY&gt;
 MAILU_RECAPTCHA_PRIVATE_KEY=&lt;YOUR_RECAPTCHA_PRIVATE_KEY&gt;
 MAILU_DOMAIN=laradock.io
 MAILU_HOSTNAMES=mail.laradock.io
@@ -506,12 +506,12 @@ Nginx is on port 80 or 443. Nginx sends request through varnish server and varni
 <ol>
 <li>You have to set domain name for VARNISH_PROXY1_BACKEND_HOST variable.</li>
 <li>If you want to use varnish for different domains, you have to add new configuration section in your env file.
-<pre><code>VARNISH_PROXY1_CACHE_SIZE=128m
+<pre tabindex=0><code>VARNISH_PROXY1_CACHE_SIZE=128m
 VARNISH_PROXY1_BACKEND_HOST=replace_with_your_domain.name
 VARNISH_PROXY1_SERVER=SERVER1
 </code></pre></li>
 <li>Then you have to add new config section into docker-compose.yml with related variables:
-<pre><code>custom_proxy_name:
+<pre tabindex=0><code>custom_proxy_name:
       container_name: custom_proxy_name
       build: ./varnish
       expose:
@@ -607,7 +607,7 @@ run from any cli: <code>curl -X PURGE https://yourwebsite.com/</code>.</li>
 </code></pre></div></li>
 </ol>
 <p>],</p>
-<pre><code>
+<pre tabindex=0><code>
 5 - Open your Laravel's `.env` file and update the following variables:
 
 - set the `DB_HOST` to your `mongo`.
@@ -797,14 +797,14 @@ A package (<a href=https://github.com/duxet/laravel-rethinkdb>Laravel RethinkDB<
 </code></pre></div></li>
 </ol>
 <p>5 - When configuring your other clients use the following details:</p>
-<pre><code>AWS_URL=http://minio:9000
+<pre tabindex=0><code>AWS_URL=http://minio:9000
 AWS_ACCESS_KEY_ID=access
 AWS_SECRET_ACCESS_KEY=secretkey
 AWS_DEFAULT_REGION=us-east-1
 AWS_BUCKET=test
 AWS_PATH_STYLE=true
 </code></pre><p>6 - In <code>filesystems.php</code> you shoud use the following details (s3):</p>
-<pre><code>'s3' =&gt; [
+<pre tabindex=0><code>'s3' =&gt; [
           'driver' =&gt; 's3',
           'key' =&gt; env('AWS_ACCESS_KEY_ID'),
           'secret' =&gt; env('AWS_SECRET_ACCESS_KEY'),
@@ -959,7 +959,7 @@ Password: somesupersecretpassword (if you haven&rsquo;t changed the password)</p
 <p>2 - Re-build your PHP-FPM Container <code>docker-compose build php-fpm</code>.</p>
 <p>3 - Check the default locale with <code>docker-compose exec php-fpm locale</code></p>
 <p>You can add your cron jobs to <code>workspace/crontab/root</code> after the <code>php artisan</code> line.</p>
-<pre><code>* * * * * laradock /usr/bin/php /var/www/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+<pre tabindex=0><code>* * * * * laradock /usr/bin/php /var/www/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
 
 # Custom cron
 * * * * * root echo &quot;Every Minute&quot; &gt; /var/log/cron.log 2&gt;&amp;1
@@ -981,7 +981,7 @@ Password: somesupersecretpassword (if you haven&rsquo;t changed the password)</p
 </code></pre></div><p>To login as root, replace laradock@localhost with root@localhost.</p>
 <p>MySQL 8.0 is a development release. You may prefer to use the latest stable version, or an even older release. If you wish, you can change the MySQL image that is used.</p>
 <p>Open up your .env file and set the <code>MYSQL_VERSION</code> variable to the version you would like to install.</p>
-<pre><code>MYSQL_VERSION=5.7
+<pre tabindex=0><code>MYSQL_VERSION=5.7
 </code></pre><p>Available versions are: 5.5, 5.6, 5.7, 8.0, or latest. See <a href=https://store.docker.com/images/mysql>https://store.docker.com/images/mysql</a> for more information.</p>
 <p>The default username and password for the root MySQL user are <code>root</code> and <code>root </code>.</p>
 <p>1 - Enter the MySQL container: <code>docker-compose exec mysql bash</code>.</p>
@@ -996,7 +996,7 @@ Password: somesupersecretpassword (if you haven&rsquo;t changed the password)</p
 <span style=color:#66d9ef>GRANT</span> <span style=color:#66d9ef>ALL</span> <span style=color:#66d9ef>ON</span> <span style=color:#f92672>`</span>your_db_1<span style=color:#f92672>`</span>.<span style=color:#f92672>*</span> <span style=color:#66d9ef>TO</span> <span style=color:#e6db74>&#39;mysql_user&#39;</span><span style=color:#f92672>@</span><span style=color:#e6db74>&#39;%&#39;</span> ;
 </code></pre></div>
 <p>Modify the <code>mysql/my.cnf</code> file to set your port number, <code>1234</code> is used as an example.</p>
-<pre><code>[mysqld]
+<pre tabindex=0><code>[mysqld]
 port=1234
 </code></pre><p>If you need MySQL access from your host, do not forget to change the internal port number (<code>"3306:3306"</code> -> <code>"3306:1234"</code>) in the docker-compose configuration file.</p>
 <blockquote>
@@ -1007,7 +1007,7 @@ port=1234
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>127.0.0.1    laravel.test
 </code></pre></div><p>2 - Open your browser and visit <code>{http://laravel.test}</code></p>
 <p>Optionally you can define the server name in the NGINX configuration file, like this:</p>
-<pre><code class=language-conf data-lang=conf>server_name laravel.test;
+<pre tabindex=0><code class=language-conf data-lang=conf>server_name laravel.test;
 </code></pre>
 <p>Enabling Global Composer Install during the build for the container allows you to get your composer requirements installed and available in the container after the build is done.</p>
 <p>1 - Open the <code>.env</code> file</p>
@@ -1195,9 +1195,9 @@ For configuration information, visit the <a href=https://github.com/magicmonty/b
 <blockquote>
 <p>Setting up Google Cloud for the docker registry.</p>
 </blockquote>
-<pre><code>gcloud auth configure-docker
+<pre tabindex=0><code>gcloud auth configure-docker
 </code></pre><p>Login to gcloud for use the registry and auth the permission.</p>
-<pre><code>gcloud auth login
+<pre tabindex=0><code>gcloud auth login
 </code></pre>
 <ol>
 <li>Fork the Laradock repository.</li>
@@ -1242,7 +1242,7 @@ On the other hand, docker-sync runs a process on the host machine that continuou
 <p>Make sure to set <code>DOCKER_SYNC_STRATEGY</code> on the <code>.env</code>. Read the <a href=https://github.com/EugenMayer/docker-sync/wiki/8.-Strategies>syncing strategies</a> for details.</p>
 </li>
 </ol>
-<pre><code># osx: 'native_osx' (default)
+<pre tabindex=0><code># osx: 'native_osx' (default)
 # windows: 'unison'
 # linux: docker-sync not required
 

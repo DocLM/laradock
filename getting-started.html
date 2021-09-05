@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=10">
 <title>Getting Started - Laradock</title>
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=description content="Full PHP development environment for Docker.">
 <link rel=canonical href=https://laradock.io/getting-started.html>
 <meta name=author content="Mahmoud Zalt">
@@ -176,7 +176,7 @@ Contributions
 </code></pre></div><p>Note: If you are not using Git yet for your project, you can use <code>git clone</code> instead of <code>git submodule </code>.</p>
 <p><em>To keep track of your Laradock changes, between your projects and also keep Laradock updated <a href=https://laradock.io/documentation/#track-your-laradock-changes>check these docs</a></em></p>
 <p>2 - Make sure your folder structure should look like this:</p>
-<pre><code>* project-a
+<pre tabindex=0><code>* project-a
 *   laradock-a
 * project-b
 *   laradock-b
@@ -187,13 +187,13 @@ Contributions
 <p>1 - Clone this repository anywhere on your machine:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/laradock/laradock.git
 </code></pre></div><p>Your folder structure should look like this:</p>
-<pre><code>* laradock
+<pre tabindex=0><code>* laradock
 * project-z
 </code></pre><p>2 - Edit your web server sites configuration.</p>
 <p>We&rsquo;ll need to do step 1 of the <a href=#Usage>Usage</a> section now to make this happen.</p>
-<pre><code>cp .env.example .env
+<pre tabindex=0><code>cp .env.example .env
 </code></pre><p>At the top, change the <code>APP_CODE_PATH_HOST</code> variable to your project path.</p>
-<pre><code>APP_CODE_PATH_HOST=../project-z/
+<pre tabindex=0><code>APP_CODE_PATH_HOST=../project-z/
 </code></pre><p>Make sure to replace <code>project-z</code> with your project folder name.</p>
 <p>3 - Go to the <a href=#Usage>Usage</a> section.</p>
 <p></p>
@@ -204,18 +204,18 @@ Contributions
 <p>1 - Clone this repository anywhere on your machine (similar to <a href=#A2>Steps A.2. from above</a>):</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/laradock/laradock.git
 </code></pre></div><p>Your folder structure should look like this:</p>
-<pre><code>* laradock
+<pre tabindex=0><code>* laradock
 * project-1
 * project-2
 </code></pre><p>Make sure the <code>APP_CODE_PATH_HOST</code> variable points to parent directory.</p>
-<pre><code>APP_CODE_PATH_HOST=../
+<pre tabindex=0><code>APP_CODE_PATH_HOST=../
 </code></pre><p>2 - Go to your web server and create config files to point to different project directory when visiting different domains:</p>
 <p>For <strong>Nginx</strong> go to <code>nginx/sites</code>, for <strong>Apache2</strong> <code>apache2/sites</code>.</p>
 <p>Laradock by default includes some sample files for you to copy <code>app.conf.example</code>, <code>laravel.conf.example</code> and <code>symfony.conf.example</code>.</p>
 <p>3 - change the default names <code>*.conf</code>:</p>
 <p>You can rename the config files, project folders and domains as you like, just make sure the <code>root</code> in the config files, is pointing to the correct project folder name.</p>
 <p>4 - Add the domains to the <strong>hosts</strong> files.</p>
-<pre><code>127.0.0.1  project-1.test
+<pre tabindex=0><code>127.0.0.1  project-1.test
 127.0.0.1  project-2.test
 ...
 </code></pre><p>If you use Chrome 63 or above for development, don&rsquo;t use <code>.dev</code>. <a href=https://laravel-news.com/chrome-63-now-forces-dev-domains-https>Why?</a>. Instead use <code>.localhost</code>, <code>.invalid</code>, <code>.test</code>, or <code>.example</code>.</p>
